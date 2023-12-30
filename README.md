@@ -47,6 +47,9 @@ Response: JSON array containing all products.
 Request Body: JSON object with updated products details.
 #### Delete Record:
  - Endpoint: DELETE /api/products/:id
+#### Screenshot
+![image](https://github.com/Gmatieso/nodejs_crud/assets/55885416/2697de2a-f94c-45c5-93c8-36970d7f8c0f)
+
 ## Contributing
 Feel free to contribute to this project by opening issues or submitting pull requests. Your feedback and suggestions are highly appreciated.
 
