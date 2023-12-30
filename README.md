@@ -37,16 +37,16 @@ The application will be accessible at http://localhost:3000.
 
 ## API Endpoints
  #### Create Record:
-- Endpoint: POST /api/records
-Request Body: JSON object with record details.
+- Endpoint: POST /api/products
+Request Body: JSON object with products details.
 #### Read Records:
-- Endpoint: GET /api/records
-Response: JSON array containing all records.
+- Endpoint: GET /api/products
+Response: JSON array containing all products.
 #### Update Record:
-- Endpoint: PUT /api/records/:id
-Request Body: JSON object with updated record details.
+- Endpoint: PUT /api/products/:id
+Request Body: JSON object with updated products details.
 #### Delete Record:
- - Endpoint: DELETE /api/records/:id
+ - Endpoint: DELETE /api/products/:id
 ## Contributing
 Feel free to contribute to this project by opening issues or submitting pull requests. Your feedback and suggestions are highly appreciated.
 
