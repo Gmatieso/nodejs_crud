@@ -4,6 +4,7 @@ const mongoose = require('mongoose'); // import mongoose
 const app = express(); // initialize express    
 const  port = process.env.port || 3000; // we will use this later
 const productRoutes = require('./routes/productRoutes'); // import product routes 
+const errorMiddleware = require('./middleware/errorMiddleware'); // import error middleware 
 
 const MONGO_URI = process.env.MONGO_URL;
 
@@ -17,6 +18,9 @@ app.use('/api/products', productRoutes); // use product routes in the app
 app.get('/', (req, res) => {
   res.send('Express server is running');
 });
+
+
+app.use(errorMiddleware); // we will use this later
 
 // connect to mongoDB database 
 mongoose.
