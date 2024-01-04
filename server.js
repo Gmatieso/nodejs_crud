@@ -1,8 +1,11 @@
+require('dotenv').config()
 const express = require('express'); // import express
 const mongoose = require('mongoose'); // import mongoose
 const Product = require('./models/productModel'); // import product model from models/productModel.js 
 const app = express(); // initialize express    
-const  port = 3000; // we will use this later
+const  port = process.env.port || 3000; // we will use this later
+
+const MONGO_URI = process.env.MONGO_URL;
 
 app.use(express.json()); // we will use this later 
 // setting middleware to use form url encoded 
@@ -34,6 +37,7 @@ app.get('/products/:id', async (req, res) => {
     res.status(500).json({message: error.message});
   }
 })
+
 
 
 // create a POST route for products
@@ -85,7 +89,7 @@ app.delete('/products/:id', async (req, res) => {
 
 // connect to mongoDB database 
 mongoose.
-connect('mongodb+srv://admin:sOIPZAlZVS3i3eTO@cluster0.qac5cai.mongodb.net/Node-API?retryWrites=true&w=majority')
+connect(MONGO_URI)
 .then(() => {
   console.log('DB Connected!')
 
@@ -95,3 +99,4 @@ connect('mongodb+srv://admin:sOIPZAlZVS3i3eTO@cluster0.qac5cai.mongodb.net/Node-
 }).catch(err => {
   console.log(err);
 });
+
