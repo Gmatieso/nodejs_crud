@@ -4,10 +4,21 @@ const mongoose = require('mongoose'); // import mongoose
 const app = express(); // initialize express    
 const  port = process.env.port || 3000; // we will use this later
 const productRoutes = require('./routes/productRoutes'); // import product routes 
-const errorMiddleware = require('./middleware/errorMiddleware'); // import error middleware 
+const errorMiddleware = require('./middleware/errorMiddleware'); // import error middleware
 
-const MONGO_URI = process.env.MONGO_URL;
+const cors = require('cors'); // import cors
 
+const MONGO_URI = process.env.MONGO_URL;  
+const FRONTEND_URL = process.env.FRONTEND_URL;
+
+
+var corsOptions = {
+  origin: FRONTEND_URL,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+
+app.use(cors(corsOptions)); // use cors to allow cross origin requests 
 app.use(express.json()); // we will use this later 
 // setting middleware to use form url encoded 
 app.use(express.urlencoded({extended: false}))
