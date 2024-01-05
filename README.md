@@ -57,6 +57,6 @@ Feel free to contribute to this project by opening issues or submitting pull req
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Get your deployed API here!
-https://node-api-v2-kmge.onrender.com/api/
+https://node-api-v2-kmge.onrender.com/api/products
 
 ## Happy coding! 🚀
